@@ -1,4 +1,4 @@
-[The Elite](EliteLogo.jpg)
+[The Elite](https://raw.githubusercontent.com/stelian2507/WhyNew/master/EliteLogo.jpg)
 
 Stelian G. & Rafael R. aka The Elite bring you: "WhyNew"
 
