@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router();
-const Post = require('../models/Post')
+const Item = require('../models/Item')
 const User = require('../models/User')
 const axios = require('axios')
 const jwt = require('jsonwebtoken')
@@ -23,15 +23,15 @@ router.get(`/user`, verifyToken, async (req, res, next) => {
 })
 
 
-router.get(`/myPosts`, verifyToken, async (req, res, next) => {
+router.get(`/myItems`, verifyToken, async (req, res, next) => {
 
     jwt.verify(req.token, 'secretkey', async (err, authData) => {
         //I'm available via AuthData
         if (err) {
             res.status(403).json(err);
         } else {
-            let posts = await Post.find({ userId: authData.user._id })
-            res.status(200).json(posts)
+            let items = await Item.find({ userId: authData.user._id })
+            res.status(200).json(items)
         }
     })
 })
@@ -41,22 +41,23 @@ router.get(`/myPosts`, verifyToken, async (req, res, next) => {
 
 
 
-router.post(`/addAPost`, verifyToken, async (req, res, next) => {
+router.post(`/addAItem`, verifyToken, async (req, res, next) => {
     jwt.verify(req.token, 'secretkey', async (err, authData) => {
         if (err) {
             res.status(403).json(err);
         } else {
             let body = req.body
+            console.log(body)
             body.userId = authData.user._id
-            let post = await Post.create(body)
-            res.status(200).json(post)
+            let item = await Item.create(body)
+            res.status(200).json(item)
         }
     })
 })
 
-router.get(`/allPosts`, async (req, res, next) => {
-    let allPosts = await Post.find({})
-    res.status(200).json(allPosts)
+router.get(`/allItems`, async (req, res, next) => {
+    let allItems = await Item.find({})
+    res.status(200).json(allItems)
 })
 
 router.post(`/logMeIn`, async (req, res, next) => {

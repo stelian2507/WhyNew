@@ -7,7 +7,7 @@ const path = require('path')
 const app = express()
 
 
-const MONGODB_URI = process.env.MONGODB_URI || `mongodb://localhost/localIronPlate`
+const MONGODB_URI = process.env.MONGODB_URI || `mongodb://localhost/localWhyNew`
 
 mongoose
     .connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -36,9 +36,9 @@ app.use('/api', require('./routes'))
 const PORT = process.env.PORT || 5000
 
 
-app.get('*', (req, res, next) => {
-    res.sendFile(path.join(__dirname, '../frontend/build/index.html'))
-})
+// app.get('*', (req, res, next) => {
+//     res.sendFile(path.join(__dirname, '../frontend/build/index.html'))
+// })
 
 
 app.listen(PORT, () => console.log(`Listening to port ${PORT}`))

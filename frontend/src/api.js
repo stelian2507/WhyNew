@@ -21,14 +21,14 @@ const actions = {
         return await axios.get(`${baseURL}/user`, resetHead())
     },
 
-    getMyPosts: async () => {
-        return await axios.get(`${baseURL}/myPosts`, resetHead())
+    getMyItems: async () => {
+        return await axios.get(`${baseURL}/myItems`, resetHead())
     },
-    getAllPosts: async () => {
-        return await axios.get(`${baseURL}/allPosts`, resetHead())
+    getAllItems: async () => {
+        return await axios.get(`${baseURL}/allItems`, resetHead())
     },
-    addPost: async (post) => {
-        return await axios.post(`${baseURL}/addAPost`, { post }, resetHead())
+    addItem: async (item) => {
+        return await axios.post(`${baseURL}/addAItem`, item , resetHead())
     },
     logIn: async (data) => {
 

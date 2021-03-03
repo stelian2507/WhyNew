@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import actions from '../api'
 
 function Profile(props) {
-    const [myPosts, setMyPosts] = useState([])
+    const [myItems, setMyItems] = useState([])
 
 
     useEffect(() => {
@@ -10,13 +10,13 @@ function Profile(props) {
         if (!props.user.email) {
             props.history.push('/')
         }
-        actions.getMyPosts().then(res => setMyPosts(res.data))
+        actions.getMyItems().then(res => setMyItems(res.data))
     }, [])
 
-    const showPosts = () => {
-        return myPosts.map(post => {
+    const showItems = () => {
+        return myItems.map(item => {
             return (
-                <li key={post._id}>{post.post}</li>
+                <li key={item._id}>{item.item}</li>
             )
         })
     }
@@ -25,7 +25,7 @@ function Profile(props) {
         <div>
             <h3>{props.user?.email}</h3>
 
-            {showPosts()}
+            {showItems()}
         </div>
     );
 }
