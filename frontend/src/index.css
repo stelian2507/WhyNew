@@ -16,6 +16,13 @@ code {
 nav {
   display:flex;
   justify-content: space-evenly;
+  background-color: rgb(168, 171, 173);
+  text-transform: uppercase;
+  border-style: solid;
+  border-color:black;
+  
+  
+  
 }
 
 input {

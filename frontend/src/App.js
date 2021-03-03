@@ -28,10 +28,10 @@ function App() {
       <h1>WhyNew to the moon 🚀 </h1>
       <h4>{user.email}</h4>
       <nav>
-        <Link to="/">Home</Link>
-        <Link to="all-items">All Items</Link>
-        <Link to="add-items">Add Item</Link>
-        {!user.email ? <Link to="/auth">Log in</Link> : <Link to="/profile">Profile</Link>}
+        <Link to="/"><b>Home</b></Link>
+        <Link to="all-items"><b>All Items</b></Link>
+        <Link to="add-items"><b>Add Item</b></Link>
+        {!user.email ? <Link to="/auth"><b>Log in</b></Link> : <Link to="/profile"><b>Profile</b></Link>}
 
 
       </nav>
