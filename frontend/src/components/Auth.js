@@ -17,6 +17,7 @@ const Auth = (props) => {
     }
 
     return (
+        <div className='googlebuttoncss'>
         <GoogleLogin
             clientId={process.env.REACT_APP_GOOGLEID}
             buttonText="Signup"
@@ -24,6 +25,7 @@ const Auth = (props) => {
             onFailure={onResponse}
             cookiePolicy={"single_host_origin"}
         />
+        </div>
     );
 }
 

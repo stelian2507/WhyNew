@@ -24,15 +24,15 @@ function App() {
 
   return (
     <div className="App">
-
-      <h1>WhyNew to the moon 🚀 </h1>
+<nav className='logincss'> {!user.email ? <Link to="/auth"><b>Log in</b></Link> : <Link to="/profile"><b>Profile</b></Link>}
+</nav>
+      <h1 className='titlecss'>WhyNew to the moon </h1>
       <h4>{user.email}</h4>
       <nav>
         <Link to="/"><b>Home</b></Link>
         <Link to="all-items"><b>All Items</b></Link>
         <Link to="add-items"><b>Add Item</b></Link>
-        {!user.email ? <Link to="/auth"><b>Log in</b></Link> : <Link to="/profile"><b>Profile</b></Link>}
-
+       
 
       </nav>
 

@@ -37,6 +37,20 @@
   }
 }
 
+.titlecss {
+  color: rgb(16, 219, 16);
+}
+
+.googlebuttoncss{
+  display: flex;
+  justify-content: center;
+  border-style: solid;
+  border-color: indigo;
+}
+.logincss{
+  display: flex;
+  align-items: 
+}
 /* DESKTOP VERSION STARTING FROM HERE*/
 @media only screen and (min-width: 600px) {
   body {
