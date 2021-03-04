@@ -5,6 +5,7 @@ import actions from '../api'
 function AllItems(props) {
     const [items, setItems] = useState([])
 
+
     useEffect(() => {
         actions.getAllItems().then((allItems) => {
             setItems(allItems.data)
