@@ -38,7 +38,7 @@ function AddItem(props) {
             <h3>Add a AddItem</h3>
 
             <form onSubmit={handleSubmit}>
-                <input onChange={handleChangeItem} type="text" name="item" placeholder="Make a item..." />
+                <input onChange={handleChangeItem} type="text" name="item" placeholder="Add an item..." />
                 <input onChange={handleChangePrice} type="number" name="price" placeholder="This is the price" />
                 <input onChange={handleChangeImage_url} type="text" name="image" placeholder="This is the image" />
                 <button>📬</button>
