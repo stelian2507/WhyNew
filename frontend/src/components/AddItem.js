@@ -35,11 +35,11 @@ function AddItem(props) {
 
     return (
         <>
-            <h3>Add a AddItem</h3>
+            <h3>Add an Item</h3>
 
             <form onSubmit={handleSubmit}>
                 <input onChange={handleChangeItem} type="text" name="item" placeholder="Add an item..." />
-                <input onChange={handleChangePrice} type="number" name="price" placeholder="This is the price" />
+                <input onChange={handleChangePrice} type="number" name="price" placeholder="Set your price" />
                 <input onChange={handleChangeImage_url} type="text" name="image" placeholder="This is the image" />
                 <button>📬</button>
             </form>
