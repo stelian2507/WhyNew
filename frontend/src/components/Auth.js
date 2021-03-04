@@ -17,7 +17,7 @@ const Auth = (props) => {
     }
 
     return (
-        <div className='googlebuttoncss'>
+        <div>
         <GoogleLogin
             clientId={process.env.REACT_APP_GOOGLEID}
             buttonText="Signup"

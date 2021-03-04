@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  background-color: rgb(15, 146, 96);
+}
+body {
+  background-color: rgb(19, 110, 26);
 }
 
 .App-logo {
@@ -38,18 +42,13 @@
 }
 
 .titlecss {
-  color: rgb(16, 219, 16);
+  color: rgb(0, 2, 0);
 }
 
-.googlebuttoncss{
-  display: flex;
-  justify-content: center;
-  border-style: solid;
-  border-color: indigo;
-}
 .logincss{
   display: flex;
-  align-items: 
+  justify-content: flex-end;
+
 }
 /* DESKTOP VERSION STARTING FROM HERE*/
 @media only screen and (min-width: 600px) {

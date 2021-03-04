@@ -13,13 +13,16 @@ code {
 }
 
 
-nav {
+.navbarcss {
   display:flex;
   justify-content: space-evenly;
-  background-color: rgb(168, 171, 173);
+  background-color: rgb(49, 128, 29);
   text-transform: uppercase;
-  border-style: solid;
-  border-color:black;
+  border-radius: 50px;
+  
+  
+  /* border-style: solid;
+  border-color:black; */
   
   
   
