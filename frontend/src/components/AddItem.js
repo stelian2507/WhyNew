@@ -42,7 +42,7 @@ function AddItem(props) {
 
     return (
         <>
-            <h3>Add a AddItem</h3>
+            <h3>Add an Item</h3>
 
             <form onSubmit={handleSubmit}>
                 <input onChange={handleChangeItem} type="text" name="item" placeholder="Add an item..." />
