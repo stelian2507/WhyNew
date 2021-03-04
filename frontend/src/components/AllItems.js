@@ -17,7 +17,7 @@ console.log(items)
         return items.map(item => {
             return (
                 
-               <div><li key={item._id}>{item.item} -${item.price}{item.image_url}</li>
+               <div><li key={item._id}>{item.item} -${item.price}{item.description}{item.image_url}</li>
                  <img src={item.image_url}/>
                 </div>
                 

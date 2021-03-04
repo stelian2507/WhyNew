@@ -41,16 +41,16 @@ router.get(`/myItems`, verifyToken, async (req, res, next) => {
 
 
 
-router.post(`/addAItem`, verifyToken, async (req, res, next) => {
+router.post(`/addAItem`, verifyToken, async (req, res, next) => {  // listens to API.js 
     jwt.verify(req.token, 'secretkey', async (err, authData) => {
         if (err) {
             res.status(403).json(err);
         } else {
-            let body = req.body
+            let body = req.body // {item, price, image_url}
             console.log(body)
-            body.userId = authData.user._id
-            let item = await Item.create(body)
-            res.status(200).json(item)
+            body.userId = authData.user._id   //records witch user is adding items
+            let item = await Item.create(body) // after it awaits -- it creates the object in the data base
+            res.status(200).json(item)   //  response 200 and sends the object that you created in the data base to API.js in the front end. 
         }
     })
 })

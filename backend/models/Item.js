@@ -3,7 +3,8 @@ const Item = model('Item', new Schema({
     item: String,
     price: Number,
     userId: { type: Schema.Types.ObjectId, ref: 'User' },
-    image_url: String
+    image_url: String,
+    description: String
 
 }))
 module.exports = Item 
