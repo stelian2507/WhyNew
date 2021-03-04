@@ -5,11 +5,12 @@ function AddItem(props) {
 
     let [item, setItem] = useState('')
     let [price, setPrice] = useState('')
+    let [image_url, setImage_url] = useState('')
     const handleSubmit = (event) => {
         //Send it to the server! 
         event.preventDefault()
 
-        actions.addItem({item, price})
+        actions.addItem({item, price, image_url})
             .then(newItem => {
                 console.log('new item!', newItem)
                 //Redirect to all-items page
@@ -27,6 +28,10 @@ function AddItem(props) {
         setPrice(event.target.value)
     }
 
+    const handleChangeImage_url = (event) => {
+        //On typing setItem 
+        setImage_url(event.target.value)
+    }
 
     return (
         <>
@@ -35,6 +40,7 @@ function AddItem(props) {
             <form onSubmit={handleSubmit}>
                 <input onChange={handleChangeItem} type="text" name="item" placeholder="Make a item..." />
                 <input onChange={handleChangePrice} type="number" name="price" placeholder="This is the price" />
+                <input onChange={handleChangeImage_url} type="text" name="image" placeholder="This is the image" />
                 <button>📬</button>
             </form>
 

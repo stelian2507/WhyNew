@@ -16,8 +16,8 @@ console.log(items)
         return items.map(item => {
             return (
                 
-               <div><li key={item._id}>{item.item} -${item.price}</li>
-                 
+               <div><li key={item._id}>{item.item} -${item.price}{item.image_url}</li>
+                 <img src={item.image_url}/>
                 </div>
                 
             )
@@ -29,6 +29,7 @@ console.log(items)
         <>
             <h3>All Items</h3>
             <ul>{showItems()}</ul>
+            
 
         </>
     );

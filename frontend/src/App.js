@@ -7,8 +7,8 @@ import AllItems from './components/AllItems'
 import Auth from './components/Auth'
 import Profile from './components/Profile'
 import actions from './api'
-import { Switch, Route, Link } from 'react-router-dom'
-
+import { Switch, Route, Link, useHistory} from 'react-router-dom'
+import TheContext from './TheContext'
 
 
 
@@ -22,7 +22,10 @@ function App() {
     }).catch(console.error)
   }, [])
 
+  const history = useHistory()
+
   return (
+    <TheContext.Provider value={{ user, setUser, history }}>
     <div className="App">
 <nav className='logincss'> {!user.email ? <Link to="/auth"><b>Log in</b></Link> : <Link to="/profile"><b>Profile</b></Link>}
 </nav>
@@ -43,10 +46,11 @@ function App() {
         <Route exact path="/all-items" render={(props) => <AllItems {...props} />} />
         <Route exact path="/add-items" render={(props) => <AddItem {...props} />} />
         <Route exact path="/auth" render={(props) => <Auth setUser={setUser} {...props} />} />
-        <Route exact path="/profile" render={(props) => <Profile user={user} {...props} />} />
+        <Route exact path="/profile" render={(props) => <Profile {...props} />} />
       </Switch>
 
     </div>
+    </TheContext.Provider>
   );
 }
 
