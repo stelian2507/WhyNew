@@ -6,7 +6,6 @@ import './Allitems.css';
 
 function AllItems(props) {
     const [items, setItems] = useState([])
-    const [delItem, setDelItems] = useState('')
 
 
     useEffect(() => {
@@ -22,8 +21,8 @@ function AllItems(props) {
         actions.delItem(itemId)
         .then(res => {
             let copyItems = [...items]
-            let filtereItems = copyItems.filter(each => each._id !== itemId)
-            setItems(filtereItems)
+            let filteredItems = copyItems.filter(each => each._id !== itemId)
+            setItems(filteredItems)
         })
 
     }

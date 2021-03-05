@@ -29,7 +29,7 @@ function App() {
     <TheContext.Provider value={{ user, setUser, history }}>
        <NavBar/>
     <div className="App">
-    <nav className='logincss'> {!user.email ? <Link to="/auth"><b>Log in</b></Link> : <Link to="/profile"><b>Profile</b></Link>}
+    {/* <nav className='logincss'> {!user.email ? <Link to="/auth"><b>Log in</b></Link> : <Link to="/profile"><b>Profile</b></Link>}
 </nav>
       <h1 className='titlecss'>WhyNew</h1>
       <p><i>Why buy new overpriced if the option of slightly used exists.</i></p>
@@ -38,7 +38,7 @@ function App() {
         <Link to="/"><b>Home</b></Link>
         <Link to="all-items"><b>All Items</b></Link>
         <Link to="add-items"><b>Add Item</b></Link>
-      </nav>
+      </nav> */}
 
 
       <Switch>

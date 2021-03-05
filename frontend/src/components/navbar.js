@@ -1,5 +1,6 @@
 import React from 'react';
 import './navbar.css';
+import {Link} from 'react-router-dom'
 
 function Navbar(props) {
     return (
@@ -23,7 +24,11 @@ function Navbar(props) {
                 <button class="login-btn"><b>Login</b></button> 
             </div>
         </div>
-
+        <div className="nav-buttons">
+                <Link to="/"><b>Home</b></Link>
+                <Link to="all-items"><b>All Items</b></Link>
+                <Link to="add-items"><b>Add Item</b></Link>
+         </div>
         {/* / end Nav Bar */}
 
             {/* <section class="bodyNav-bar">
