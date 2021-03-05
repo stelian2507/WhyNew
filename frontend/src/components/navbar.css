@@ -38,6 +38,13 @@
     border:#4CAF50;
   }
 
+.searchButton:focus,
+.searchItems:focus,
+.login-btn:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
 .searchItems{
     height: 21px;
     border: 1px solid #aaafaa;
