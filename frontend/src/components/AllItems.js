@@ -17,9 +17,19 @@ console.log(items)
         return items.map(item => {
             return (
                 
-               <div><li key={item._id}>{item.item} -${item.price}{item.description}{item.image_url}</li>
-                 <img src={item.image_url}/>
+                <div class="Display-Grid" style={{width:"91vw", display:'flex', justifyContent:"space-around", flexFlow:"wrap", paddingLeft:'9vw'}}>
+                    <div class="item-box" style={{display:"flex", flexFlow:'column', alignItems:'baseline'}}>
+                        <div>
+                            
+                        </div>
+
+
+                    </div>
                 </div>
+
+            //    <div><li key={item._id}>{item.item} -${item.price}{item.description}{item.image_url}</li>
+            //      <img src={item.image_url}/>
+            //     </div> 35 20 10 20 10 20 10
                 
             )
         })

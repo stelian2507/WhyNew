@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Home from './components/Home'
 import AddItem from './components/AddItem'
+import NavBar from './components/navbar'
 import AllItems from './components/AllItems'
 import Auth from './components/Auth'
 import Profile from './components/Profile'
@@ -50,6 +51,7 @@ function App() {
       </Switch>
 
     </div>
+    <NavBar/>
     </TheContext.Provider>
   );
 }

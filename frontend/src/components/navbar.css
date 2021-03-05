@@ -1,0 +1,79 @@
+@import url(https://allfont.net/allfont.css?fonts=deftone-stylus);
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+#Navbar{
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.logo{
+    /* font-family: 'PT Sans', sans-serif; */
+    margin-left: 45vw;
+    font-family: 'Deftone Stylus', arial;
+    font-size: 1.75em;
+}
+
+
+.login-btn{
+    margin: 0 20px 0 35px;
+    width: 4.5vw;
+    height: 26px;
+    background-color: white;
+    border: 2px solid #308EFD;
+    color:#308EFD;
+    border-radius: 7px;
+    margin: 20px 0 10px;
+    
+}
+
+.login-btn:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border:#4CAF50;
+  }
+
+.searchItems{
+    height: 21px;
+    border: 1px solid #aaafaa;
+    border-right: 0;
+    border-radius: 5px 0 0 5px;
+    color: #aaafaa;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 14px;
+}
+
+.searchButton {
+    width: 25px;
+    height: 25px;
+    border: 1px solid #aaafaa;
+    background: #aaafaa;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+  }
+
+  
+
+  .login{
+      width: 20vw;
+      margin-top: 30px;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-around;
+  }
+
+
+  .bodyNav-bar{
+    margin:4.1vw;
+    width: 91vw;
+    min-height: 100vh;
+    background-color: indigo;
+  }
