@@ -30,6 +30,11 @@ const actions = {
     addItem: async (item) => {
         return await axios.post(`${baseURL}/addAItem`, item , resetHead())
     },
+    // Added by John
+    delItem: async (item) => {
+        return await axios.post(`${baseURL}/delete/:id`, item , resetHead())
+    },
+    //------ is it good??
     logIn: async (data) => {
 
         localStorage.setItem('googleTokenId', data.tokenId)

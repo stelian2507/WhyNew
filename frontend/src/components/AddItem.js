@@ -7,6 +7,7 @@ function AddItem(props) {
     let [price, setPrice] = useState('')
     let [image_url, setImage_url] = useState('')
     let [description, setDescription] = useState('')
+    
     const handleSubmit = (event) => {
         //Send it to the server! 
         event.preventDefault()

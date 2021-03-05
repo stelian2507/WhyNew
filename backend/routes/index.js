@@ -22,7 +22,6 @@ router.get(`/user`, verifyToken, async (req, res, next) => {
     })
 })
 
-
 router.get(`/myItems`, verifyToken, async (req, res, next) => {
 
     jwt.verify(req.token, 'secretkey', async (err, authData) => {
@@ -40,7 +39,7 @@ router.get(`/myItems`, verifyToken, async (req, res, next) => {
 
 
 
-
+//Add Item to data base
 router.post(`/addAItem`, verifyToken, async (req, res, next) => {  // listens to API.js 
     jwt.verify(req.token, 'secretkey', async (err, authData) => {
         if (err) {
@@ -54,6 +53,22 @@ router.post(`/addAItem`, verifyToken, async (req, res, next) => {  // listens to
         }
     })
 })
+
+
+
+//Modify Item in data base
+
+
+
+
+//Delete item from data base
+router.delete(`/delete/:id`, async(req, res) => {
+    console.log('delete this item ', req.params) //before request query with del
+    let delItem = await item.deleteOne({_id: req.params.id})
+    res.status(200).json(delItem)
+})
+
+
 
 router.get(`/allItems`, async (req, res, next) => {
     let allItems = await Item.find({})
