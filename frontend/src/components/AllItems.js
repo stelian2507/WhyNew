@@ -19,8 +19,7 @@ function AllItems(props) {
 
     const deleteItem = (itemId) => {
         // preventDefault()
-        axios
-        .delete(`http://localhost:5000/delete/${itemId}`)
+        actions.delItem(itemId)
         .then(res => {
             let copyItems = [...items]
             let filtereItems = copyItems.filter(each => each._id !== itemId)
@@ -45,7 +44,7 @@ console.log(items)
                             <img src={item.image_url} alt="product picture"  style={{width:'18vw', height:'30vw', borderRadius:'6px'}}/>
                         </div>
                         <div>
-                            <ul>
+                            <ul style={{listStyleType:"none"}}>
                                 <li>{item.item}</li>
                                 <li>${item.price}</li>
                                 <li>{item.description}</li>
@@ -53,7 +52,7 @@ console.log(items)
                         </div>
 
                         <div style={{marginBottom:'2vh',display:"flex", justifySelf:"end"}}>
-                        <button  onClick={deleteItem(item._id)} style={{border:'none',backgroundColor:'red', color:"white", borderRadius:'6px'}}>delete</button>
+                        <button  onClick={(e) => deleteItem(item._id)} style={{border:'none',backgroundColor:'red', color:"white", borderRadius:'6px'}}>delete</button>
                     </div>
 
                     </div>
