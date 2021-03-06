@@ -23,7 +23,13 @@
 
 .nav-buttons :link{
   text-decoration: none;
+}
+
+.nav-buttons b{
   color: black;
+}
+.nav-buttons b:hover{
+  color:#aaafaa;
 }
 
 
@@ -109,4 +115,12 @@
       display: flex;
       align-items: baseline;
       justify-content: space-around;
+  }
+
+
+  .del-Btn-StoreFront{
+    color: #fa556b;
+    border: 1px solid #fa556b;
+    border-radius: 3px;
+    padding: 0.2vw 0.6vw;
   }

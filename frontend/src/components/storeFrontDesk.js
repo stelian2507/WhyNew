@@ -48,10 +48,12 @@ function StoreFrontDesk(props) {
                                 <li>{eachItem.description}</li>
                             </ul>
                         </div>
-
-                        <div style={{marginBottom:'2vh',display:"flex", justifySelf:"end"}}>
-                        {/* <button  onClick={(e) => deleteItem(item._id)} style={{border:'none',backgroundColor:'red', color:"white", borderRadius:'6px'}}>delete</button> */}
-                    </div>
+                        
+                        {/* <div style={{marginBottom:'2vh',display:"flex", justifyContent:'flex-end'}}>
+                            <button onClick={(e) => deleteItem(eachItem._id)} >buy</button>
+                            <button onClick={(e) => deleteItem(eachItem._id)} >modify</button>
+                            <button onClick={(e) => deleteItem(eachItem._id)} className="del-Btn-StoreFront">delete</button>
+                        </div> */}
 
                     </div>)
                     

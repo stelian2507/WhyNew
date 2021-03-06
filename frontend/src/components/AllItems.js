@@ -52,7 +52,7 @@ console.log(items)
 
                         <div style={{marginBottom:'2vh',display:"flex", justifySelf:"end"}}>
                         <button  onClick={(e) => deleteItem(item._id)} style={{border:'none',backgroundColor:'red', color:"white", borderRadius:'6px'}}>delete</button>
-                    </div>
+                        </div>
 
                     </div>
                     
