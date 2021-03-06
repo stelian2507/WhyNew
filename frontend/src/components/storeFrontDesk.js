@@ -3,7 +3,7 @@ import actions from '../api'
 import './Allitems.css'
 
 
-function storeFrontDesk(props) {
+function StoreFrontDesk(props) {
 
     const [items, setItems] = useState([])
 
@@ -15,13 +15,31 @@ function storeFrontDesk(props) {
 
     useEffect((dataToRender) => {}, [])
 
+    const mockData = [
+        {
+            item: "Iphone X",
+            price: '300',
+            // userId: { type: Schema.Types.ObjectId, ref: 'User' },
+            image_url: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/refurb-iphone-xs-max-gold?wid=1144&hei=1144&fmt=jpeg&qlt=80&op_usm=0.5,0.5&.v=1579299533651',
+            description: 'A beautiful phone'
+        } , 
+        {
+            item: "Iphone X",
+            price: '300',
+            // userId: { type: Schema.Types.ObjectId, ref: 'User' },
+            image_url: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/refurb-iphone-xs-max-gold?wid=1144&hei=1144&fmt=jpeg&qlt=80&op_usm=0.5,0.5&.v=1579299533651',
+            description: 'A beautiful phone'
+        }
+
+    ]                    
+
+
     const showItems = () =>{
         return items.map(eachItem => {
-            <div class="Display-Grid" style={{width:"91vw", display:'flex', justifyContent:"space-around", flexFlow:"wrap", paddingLeft:'9vw'}}>
-
-                    <div key={eachItem._id} class="item-box" style={{display:"flex", flexFlow:'column', alignItems:'baseline'}}>
+            return(
+                        <div key={eachItem._id} class="item-box">
                         <div style={{padding:'1vw'}}>
-                            <img src={eachItem.image_url} alt="product picture"  style={{width:'18vw', height:'30vw', borderRadius:'6px'}}/>
+                            <img src={eachItem.image_url} alt="product picture"  style={{width:'15vw', height:'15vw', borderRadius:'6px'}}/>
                         </div>
                         <div>
                             <ul style={{listStyleType:"none"}}>
@@ -32,12 +50,12 @@ function storeFrontDesk(props) {
                         </div>
 
                         <div style={{marginBottom:'2vh',display:"flex", justifySelf:"end"}}>
-                        <button  onClick={(e) => deleteItem(item._id)} style={{border:'none',backgroundColor:'red', color:"white", borderRadius:'6px'}}>delete</button>
+                        {/* <button  onClick={(e) => deleteItem(item._id)} style={{border:'none',backgroundColor:'red', color:"white", borderRadius:'6px'}}>delete</button> */}
                     </div>
 
-                    </div>
+                    </div>)
                     
-                </div>
+
         })
     }
 
@@ -51,11 +69,24 @@ function storeFrontDesk(props) {
     } 
 
     return (
-        <>
-            <h3>All Items</h3>
-            <ul>{showItems()}</ul>
-        </>
+        <div className="All-items-display">
+            {/* <div style={{width:'15vw', height:'15vw', borderRadius:'6px', backgroundColor: "red"}}></div>
+            <div style={{width:'15vw', height:'15vw', borderRadius:'6px', backgroundColor: "red"}}></div>
+            <div style={{width:'15vw', height:'15vw', borderRadius:'6px', backgroundColor: "red"}}></div>
+            <div style={{width:'15vw', height:'15vw', borderRadius:'6px', backgroundColor: "red"}}></div>
+            <div style={{width:'15vw', height:'15vw', borderRadius:'6px', backgroundColor: "red"}}></div>
+            <div style={{width:'15vw', height:'15vw', borderRadius:'6px', backgroundColor: "red"}}></div>
+            <div style={{width:'15vw', height:'15vw', borderRadius:'6px', backgroundColor: "red"}}></div>
+            <div style={{width:'15vw', height:'15vw', borderRadius:'6px', backgroundColor: "red"}}></div> */}
+                {/* <h3>All Items</h3> */}
+             {/* <div class="Display-Grid"> */}
+                 {showItems()}
+                 {/* </div> */}
+
+             
+        </div>
+    
     );
 }
 
-export default storeFrontDesk;
+export default StoreFrontDesk;

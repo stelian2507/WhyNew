@@ -71,6 +71,23 @@
     font-size: 14px;
 }
 
+
+/* it belongs to add items css */
+
+.AddForm input{
+    height: 21px;
+    border: 1px solid #aaafaa;
+    border-right: 0;
+    color: #aaafaa;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 14px;
+}
+
+.AddForm input:focus{
+  outline: none;
+    box-shadow: none;
+}
+
 .searchButton {
     width: 25px;
     height: 25px;
@@ -92,12 +109,4 @@
       display: flex;
       align-items: baseline;
       justify-content: space-around;
-  }
-
-
-  .bodyNav-bar{
-    margin:4.1vw;
-    width: 91vw;
-    min-height: 100vh;
-    background-color: indigo;
   }

@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Home from './components/Home'
 import AddItem from './components/AddItem'
+import StoreFrontDesk from './components/storeFrontDesk'
 import NavBar from './components/navbar'
 import AllItems from './components/AllItems'
 import Auth from './components/Auth'
@@ -43,7 +44,7 @@ function App() {
 
       <Switch>
         <Route exact path="/" render={(props) => <Home {...props} />} />
-        <Route exact path="/all-items" render={(props) => <AllItems {...props} />} />
+        <Route exact path="/storeFrontDesk" render={(props) => <StoreFrontDesk {...props} />} />
         <Route exact path="/add-items" render={(props) => <AddItem {...props} />} />
         <Route exact path="/auth" render={(props) => <Auth setUser={setUser} {...props} />} />
         <Route exact path="/profile" render={(props) => <Profile {...props} />} />
