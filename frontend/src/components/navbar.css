@@ -12,6 +12,27 @@
     justify-content: space-between;
 }
 
+.nav-buttons{
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  padding:10px 0;
+  background-color: white;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+}
+
+.nav-buttons :link{
+  text-decoration: none;
+}
+
+.nav-buttons b{
+  color: black;
+}
+.nav-buttons b:hover{
+  color:#aaafaa;
+}
+
+
 
 .logo{
     /* font-family: 'PT Sans', sans-serif; */
@@ -56,6 +77,23 @@
     font-size: 14px;
 }
 
+
+/* it belongs to add items css */
+
+.AddForm input{
+    height: 21px;
+    border: 1px solid #aaafaa;
+    border-right: 0;
+    color: #aaafaa;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 14px;
+}
+
+.AddForm input:focus{
+  outline: none;
+    box-shadow: none;
+}
+
 .searchButton {
     width: 25px;
     height: 25px;
@@ -80,9 +118,9 @@
   }
 
 
-  .bodyNav-bar{
-    margin:4.1vw;
-    width: 91vw;
-    min-height: 100vh;
-    background-color: indigo;
+  .del-Btn-StoreFront{
+    color: #fa556b;
+    border: 1px solid #fa556b;
+    border-radius: 3px;
+    padding: 0.2vw 0.6vw;
   }

@@ -5,6 +5,7 @@ const token = localStorage.getItem('token')
 
 const API = axios.create({ baseURL, headers: { Authorization: `Bearer ${token}` } });
 
+// Login Cridentials
 let resetHead = () => {
     return {
         headers: {
@@ -34,6 +35,11 @@ const actions = {
     delItem: async (itemId) => {
         return await axios.delete(`${baseURL}/delete/${itemId}`, resetHead())
     },
+
+    searchItems: async (itemName) => {
+        return await axios.get(`${baseURL}/findItem/${itemName}`, resetHead())
+    },
+
     //------ is it good??
     logIn: async (data) => {
 

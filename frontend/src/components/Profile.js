@@ -38,11 +38,10 @@ function Welcome(props) {
         localStorage.clear()
     }
     return (
-        <>
-        <h3> Welcome {user?.email} with no props </h3>
-        <button onClick={() => history.goBack()}>GO back</button>
+        <div>
+        {/* <button onClick={() => history.goBack()}>GO back</button> */}
         <button onClick={logOut}>Log Out</button>
-        </>
+        </div>
     )
 }
 
