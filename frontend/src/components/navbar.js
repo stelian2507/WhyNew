@@ -46,7 +46,7 @@ function Navbar(props) {
             <div class="login">
                
             
-            <div style={{display:'flex', alignItems:'center'}}>
+            <div className='search-css'>
             <form onSubmit={postSearch}>
                   <input onChange={handleChange} type="text" class="searchItems" placeholder=" ...search"/>
                   

@@ -10,10 +10,11 @@
 
 
 .All-items-display{
-    padding: 7vw 5vw;
-    width: 82.5vw;
+    /* padding: 7vw 5vw;
+    width: 80vw;
+    margin: 0vw 10vw;
     min-height: 100vh;
-    background-color: white;  
+    background-color: white;   */
     
     display: flex;
     flex-direction: row;
