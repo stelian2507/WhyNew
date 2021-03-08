@@ -49,11 +49,11 @@ function StoreFrontDesk(props) {
                             </ul>
                         </div>
                         
-                        {/* <div style={{marginBottom:'2vh',display:"flex", justifyContent:'flex-end'}}>
+                        <div style={{marginBottom:'2vh',display:"flex", justifyContent:'flex-end'}}>
                             <button onClick={(e) => deleteItem(eachItem._id)} >buy</button>
                             <button onClick={(e) => deleteItem(eachItem._id)} >modify</button>
                             <button onClick={(e) => deleteItem(eachItem._id)} className="del-Btn-StoreFront">delete</button>
-                        </div> */}
+                        </div>
 
                     </div>)
                     

@@ -3,7 +3,8 @@ const router = express.Router();
 const Item = require('../models/Item')
 const User = require('../models/User')
 const axios = require('axios')
-const jwt = require('jsonwebtoken')
+const jwt = require('jsonwebtoken');
+const { query } = require('express');
 
 
 
@@ -72,6 +73,13 @@ router.delete(`/delete/:id`, async(req, res) => {
 
 router.get(`/allItems`, async (req, res, next) => {
     let allItems = await Item.find({})
+    res.status(200).json(allItems)
+})
+
+router.get(`/findItem/:name`, async (req, res, next) => {
+    // let query  = {item:`/${req.params.name}/i`}
+    console.log('My request **********', req.params)
+    let allItems = await Item.find( { 'item' : { '$regex' : req.params.name, '$options' : 'i' } } )
     res.status(200).json(allItems)
 })
 

@@ -4,11 +4,12 @@ import {Link, useHistory} from 'react-router-dom'
 import TheContext from '../TheContext'
 import actions from '../api'
 import Login from './Login';
+import axios from 'axios';
 
 function Navbar(props) {
 
     const [user, setUser] = useState({})
-
+    const[searchInput, setSearchInput] = useState('')
   useEffect(() => {
     actions.getUser().then(res => {
       setUser(res.data)
@@ -18,7 +19,19 @@ function Navbar(props) {
   const history = useHistory()
 
 
+  const handleChange = (e) => {
+    setSearchInput(e.target.value)
+  }
 
+
+  const postSearch = async (e) =>  {
+    // send the post to data base
+    e.preventDefault()
+   let res = await actions.searchItems(searchInput)
+    console.log(res.data)
+    props.setCosasInNavBar(res.data)
+    history.push('/search')
+  }
 
     return (
         
@@ -34,10 +47,14 @@ function Navbar(props) {
                
             
             <div style={{display:'flex', alignItems:'center'}}>
-            <input type="text" class="searchItems" placeholder=" ...search"/>
-                <button type="submit" class="searchButton">
-                 <i style={{color:'black'}}class="fa fa-search"></i>
-                </button>
+            <form onSubmit={postSearch}>
+                  <input onChange={handleChange} type="text" class="searchItems" placeholder=" ...search"/>
+                  
+                  
+                  <button type="submit" class="searchButton">
+                  <i style={{color:'black'}}class="fa fa-search"></i>
+                  </button>
+            </form>
                 </div>
                     <Login/>
                 </div>
