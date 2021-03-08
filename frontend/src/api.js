@@ -31,8 +31,8 @@ const actions = {
         return await axios.post(`${baseURL}/addAItem`, item , resetHead())
     },
     // Added by John
-    delItem: async (item) => {
-        return await axios.post(`${baseURL}/delete/:id`, item , resetHead())
+    delItem: async (itemId) => {
+        return await axios.delete(`${baseURL}/delete/${itemId}`, resetHead())
     },
     //------ is it good??
     logIn: async (data) => {

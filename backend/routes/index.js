@@ -64,7 +64,7 @@ router.post(`/addAItem`, verifyToken, async (req, res, next) => {  // listens to
 //Delete item from data base
 router.delete(`/delete/:id`, async(req, res) => {
     console.log('delete this item ', req.params) //before request query with del
-    let delItem = await item.deleteOne({_id: req.params.id})
+    let delItem = await Item.deleteOne({_id: req.params.id})
     res.status(200).json(delItem)
 })
 

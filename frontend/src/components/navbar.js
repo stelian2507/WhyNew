@@ -26,13 +26,13 @@ function Navbar(props) {
 
         {/* / end Nav Bar */}
 
-            <section class="bodyNav-bar">
+            {/* <section class="bodyNav-bar">
 
                 
 
 
                 
-            </section>
+            </section> */}
         </section>
     );
 }
