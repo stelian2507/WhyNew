@@ -1,10 +1,11 @@
-@import url(https://allfont.net/allfont.css?fonts=deftone-stylus);
+@import url('https://allfont.net/allfont.css?fonts=deftone-stylus');
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 
 
 #Navbar{
-    width: 100%;
+    width: 80vw;
+    margin: 0vw 10vw;
     height: 100px;
     background-color: white;
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
@@ -15,7 +16,8 @@
 .nav-buttons{
   display: flex;
   justify-content: space-evenly;
-  width: 100%;
+  /* width: 80vw; */
+  margin: 0vw 10vw;
   padding:10px 0;
   background-color: white;
   box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
@@ -36,9 +38,9 @@
 
 .logo{
     /* font-family: 'PT Sans', sans-serif; */
-    margin-left: 45vw;
+    margin: 0vw 33vw;
     font-family: 'Deftone Stylus', arial;
-    font-size: 1.75em;
+    font-size: 1.50em;
 }
 
 
@@ -123,4 +125,10 @@
     border: 1px solid #fa556b;
     border-radius: 3px;
     padding: 0.2vw 0.6vw;
+  }
+
+  .search-css{
+    display:flex;
+    justify-content: flex-end;
+    align-items:center;
   }
