@@ -1,0 +1,134 @@
+@import url('https://allfont.net/allfont.css?fonts=deftone-stylus');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
+
+#Navbar{
+    width: 80vw;
+    margin: 0vw 10vw;
+    height: 100px;
+    background-color: white;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-buttons{
+  display: flex;
+  justify-content: space-evenly;
+  /* width: 80vw; */
+  margin: 0vw 10vw;
+  padding:10px 0;
+  background-color: white;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+}
+
+.nav-buttons :link{
+  text-decoration: none;
+}
+
+.nav-buttons b{
+  color: black;
+}
+.nav-buttons b:hover{
+  color:#aaafaa;
+}
+
+
+
+.logo{
+    /* font-family: 'PT Sans', sans-serif; */
+    margin: 0vw 33vw;
+    font-family: 'Deftone Stylus', arial;
+    font-size: 1.50em;
+}
+
+
+.login-btn{
+    margin: 0 20px 0 35px;
+    width: 4.5vw;
+    height: 26px;
+    background-color: white;
+    border: 2px solid #308EFD;
+    color:#308EFD;
+    border-radius: 7px;
+    margin: 20px 0 10px;
+    
+}
+
+.login-btn:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border:#4CAF50;
+  }
+
+.searchButton:focus,
+.searchItems:focus,
+.login-btn:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+.searchItems{
+    height: 21px;
+    border: 1px solid #aaafaa;
+    border-right: 0;
+    border-radius: 5px 0 0 5px;
+    color: #aaafaa;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 14px;
+}
+
+
+/* it belongs to add items css */
+
+.AddForm input{
+    height: 21px;
+    border: 1px solid #aaafaa;
+    border-right: 0;
+    color: #aaafaa;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 14px;
+}
+
+.AddForm input:focus{
+  outline: none;
+    box-shadow: none;
+}
+
+.searchButton {
+    width: 25px;
+    height: 25px;
+    border: 1px solid #aaafaa;
+    background: #aaafaa;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 12px;
+    padding-right: 5px;
+
+  }
+
+  
+
+  .login{
+      width: 20vw;
+      margin-top: 30px;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-around;
+  }
+
+
+  .del-Btn-StoreFront{
+    color: #fa556b;
+    border: 1px solid #fa556b;
+    border-radius: 3px;
+    padding: 0.2vw 0.6vw;
+  }
+
+  .search-css{
+    display:flex;
+    justify-content: flex-end;
+    align-items:center;
+  }

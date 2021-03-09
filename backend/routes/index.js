@@ -3,7 +3,8 @@ const router = express.Router();
 const Item = require('../models/Item')
 const User = require('../models/User')
 const axios = require('axios')
-const jwt = require('jsonwebtoken')
+const jwt = require('jsonwebtoken');
+const { query } = require('express');
 
 
 
@@ -22,7 +23,6 @@ router.get(`/user`, verifyToken, async (req, res, next) => {
     })
 })
 
-
 router.get(`/myItems`, verifyToken, async (req, res, next) => {
 
     jwt.verify(req.token, 'secretkey', async (err, authData) => {
@@ -40,23 +40,46 @@ router.get(`/myItems`, verifyToken, async (req, res, next) => {
 
 
 
-
-router.post(`/addAItem`, verifyToken, async (req, res, next) => {
+//Add Item to data base
+router.post(`/addAItem`, verifyToken, async (req, res, next) => {  // listens to API.js 
     jwt.verify(req.token, 'secretkey', async (err, authData) => {
         if (err) {
             res.status(403).json(err);
         } else {
-            let body = req.body
+            let body = req.body // {item, price, image_url}
             console.log(body)
-            body.userId = authData.user._id
-            let item = await Item.create(body)
-            res.status(200).json(item)
+            body.userId = authData.user._id   //records witch user is adding items
+            let item = await Item.create(body) // after it awaits -- it creates the object in the data base
+            res.status(200).json(item)   //  response 200 and sends the object that you created in the data base to API.js in the front end. 
         }
     })
 })
 
+
+
+//Modify Item in data base
+
+
+
+
+//Delete item from data base
+router.delete(`/delete/:id`, async(req, res) => {
+    console.log('delete this item ', req.params) //before request query with del
+    let delItem = await Item.deleteOne({_id: req.params.id})
+    res.status(200).json(delItem)
+})
+
+
+
 router.get(`/allItems`, async (req, res, next) => {
     let allItems = await Item.find({})
+    res.status(200).json(allItems)
+})
+
+router.get(`/findItem/:name`, async (req, res, next) => {
+    // let query  = {item:`/${req.params.name}/i`}
+    console.log('My request **********', req.params)
+    let allItems = await Item.find( { 'item' : { '$regex' : req.params.name, '$options' : 'i' } } )
     res.status(200).json(allItems)
 })
 

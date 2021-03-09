@@ -5,6 +5,7 @@ const token = localStorage.getItem('token')
 
 const API = axios.create({ baseURL, headers: { Authorization: `Bearer ${token}` } });
 
+// Login Cridentials
 let resetHead = () => {
     return {
         headers: {
@@ -30,6 +31,20 @@ const actions = {
     addItem: async (item) => {
         return await axios.post(`${baseURL}/addAItem`, item , resetHead())
     },
+    // Added by John
+    delItem: async (itemId) => {
+        return await axios.delete(`${baseURL}/delete/${itemId}`, resetHead())
+    },
+
+    modifyItem: async (itemId) => {
+        return await axios.post(`${baseURL}/modifyItem/${itemId}`, resetHead())
+    },
+
+    searchItems: async (itemName) => {
+        return await axios.get(`${baseURL}/findItem/${itemName}`, resetHead())
+    },
+
+    //------ is it good??
     logIn: async (data) => {
 
         localStorage.setItem('googleTokenId', data.tokenId)
