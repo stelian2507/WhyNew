@@ -6,6 +6,7 @@ import './Allitems.css';
 
 function AllItems(props) {
     const [items, setItems] = useState([])
+    let [sortBtn, setSortBtn] = useState(false)
 
 
     useEffect(() => {
@@ -37,7 +38,7 @@ console.log(items)
             return (
                 
                 <div class="Display-Grid" style={{width:"91vw", display:'flex', justifyContent:"space-around", flexFlow:"wrap", paddingLeft:'9vw'}}>
-
+                   
                     <div key={item._id} class="item-box" style={{display:"flex", flexFlow:'column', alignItems:'baseline'}}>
                         <div style={{padding:'1vw'}}>
                             <img src={item.image_url} alt="product picture"  style={{width:'18vw', height:'30vw', borderRadius:'6px'}}/>

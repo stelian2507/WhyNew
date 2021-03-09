@@ -36,6 +36,10 @@ const actions = {
         return await axios.delete(`${baseURL}/delete/${itemId}`, resetHead())
     },
 
+    modifyItem: async (itemId) => {
+        return await axios.post(`${baseURL}/modifyItem/${itemId}`, resetHead())
+    },
+
     searchItems: async (itemName) => {
         return await axios.get(`${baseURL}/findItem/${itemName}`, resetHead())
     },

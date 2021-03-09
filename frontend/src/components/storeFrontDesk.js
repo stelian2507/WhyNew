@@ -6,6 +6,7 @@ import './Allitems.css'
 function StoreFrontDesk(props) {
 
     const [items, setItems] = useState([])
+    const [sortBtn, setSortBtn] = useState(false)
 
 
     let dataToRender = actions.getAllItems().then(res => {
@@ -13,28 +14,13 @@ function StoreFrontDesk(props) {
                         }).catch(console.error)
                         
 
-    useEffect((dataToRender) => {}, [])
+   
 
-    const mockData = [
-        {
-            item: "Iphone X",
-            price: '300',
-            // userId: { type: Schema.Types.ObjectId, ref: 'User' },
-            image_url: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/refurb-iphone-xs-max-gold?wid=1144&hei=1144&fmt=jpeg&qlt=80&op_usm=0.5,0.5&.v=1579299533651',
-            description: 'A beautiful phone'
-        } , 
-        {
-            item: "Iphone X",
-            price: '300',
-            // userId: { type: Schema.Types.ObjectId, ref: 'User' },
-            image_url: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/refurb-iphone-xs-max-gold?wid=1144&hei=1144&fmt=jpeg&qlt=80&op_usm=0.5,0.5&.v=1579299533651',
-            description: 'A beautiful phone'
-        }
-
-    ]                    
-
+    const buyItem = () => {}
+    const modifyItem = () => {}
 
     const showItems = () =>{
+        
         return items.map(eachItem => {
             return(
                         <div key={eachItem._id} class="item-box">
@@ -50,8 +36,8 @@ function StoreFrontDesk(props) {
                         </div>
                         
                         <div style={{marginBottom:'2vh',display:"flex", justifyContent:'flex-end'}}>
-                            <button onClick={(e) => deleteItem(eachItem._id)} >buy</button>
-                            <button onClick={(e) => deleteItem(eachItem._id)} >modify</button>
+                            <button onClick={(e) => buyItem(eachItem._id)} >buy</button>
+                            <button onClick={(e) => modifyItem(eachItem._id)} >modify</button>
                             <button onClick={(e) => deleteItem(eachItem._id)} className="del-Btn-StoreFront">delete</button>
                         </div>
 
@@ -70,24 +56,48 @@ function StoreFrontDesk(props) {
         })
     } 
 
-    return (
-        <div className="All-items-display">
-            {/* <div style={{width:'15vw', height:'15vw', borderRadius:'6px', backgroundColor: "red"}}></div>
-            <div style={{width:'15vw', height:'15vw', borderRadius:'6px', backgroundColor: "red"}}></div>
-            <div style={{width:'15vw', height:'15vw', borderRadius:'6px', backgroundColor: "red"}}></div>
-            <div style={{width:'15vw', height:'15vw', borderRadius:'6px', backgroundColor: "red"}}></div>
-            <div style={{width:'15vw', height:'15vw', borderRadius:'6px', backgroundColor: "red"}}></div>
-            <div style={{width:'15vw', height:'15vw', borderRadius:'6px', backgroundColor: "red"}}></div>
-            <div style={{width:'15vw', height:'15vw', borderRadius:'6px', backgroundColor: "red"}}></div>
-            <div style={{width:'15vw', height:'15vw', borderRadius:'6px', backgroundColor: "red"}}></div> */}
-                {/* <h3>All Items</h3> */}
-             {/* <div class="Display-Grid"> */}
-                 {showItems()}
-                 {/* </div> */}
 
-             
-        </div>
-    
+    const sortItems = (e) => {
+        // e.preventDefault()
+        let sortedItems = [...items]
+        
+        if(sortBtn === false){
+            sortedItems.sort((a,b) => {return(a.price-b.price)})
+                     setItems(sortedItems)
+                     setSortBtn(true)
+        }else{
+            sortedItems.sort((a,b) => {return(b.price-a.price)})
+                     setItems(sortedItems)
+                     setSortBtn(false)
+        }
+        
+    }
+
+     useEffect((dataToRender) => {}, [])
+
+    return (
+        <>
+            <div style={{float:'right'}}>
+                <button  onClick={(e) => sortItems(e)} style={{border:'2px solid #308EFD',backgroundColor:'white', color:"#308EFD", borderRadius:'6px', padding:'2px 15px'}}><b>sort by price</b></button>
+            </div>
+            <div className="All-items-display">
+                
+                {/* <div style={{width:'15vw', height:'15vw', borderRadius:'6px', backgroundColor: "red"}}></div>
+                <div style={{width:'15vw', height:'15vw', borderRadius:'6px', backgroundColor: "red"}}></div>
+                <div style={{width:'15vw', height:'15vw', borderRadius:'6px', backgroundColor: "red"}}></div>
+                <div style={{width:'15vw', height:'15vw', borderRadius:'6px', backgroundColor: "red"}}></div>
+                <div style={{width:'15vw', height:'15vw', borderRadius:'6px', backgroundColor: "red"}}></div>
+                <div style={{width:'15vw', height:'15vw', borderRadius:'6px', backgroundColor: "red"}}></div>
+                <div style={{width:'15vw', height:'15vw', borderRadius:'6px', backgroundColor: "red"}}></div>
+                <div style={{width:'15vw', height:'15vw', borderRadius:'6px', backgroundColor: "red"}}></div> */}
+                    {/* <h3>All Items</h3> */}
+                {/* <div class="Display-Grid"> */}
+                    {showItems()}
+                    {/* </div> */}
+
+                
+            </div>
+        </>
     );
 }
 

@@ -16,8 +16,7 @@ function Search(props) {
                 </div>
              )
             })
-
-            //props.MyItemsZZZZ.
+            
         )
     }
 
